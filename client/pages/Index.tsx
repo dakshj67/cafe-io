@@ -131,21 +131,10 @@ export default function Index() {
           </div>
 
           <div className="relative mx-auto h-[480px] w-full max-w-[650px] lg:h-[580px]">
-            <div className="absolute inset-4 rounded-[48%_48%_10%_10%] bg-[#dfb58f] shadow-[0_30px_60px_rgba(80,45,30,0.15)] lg:inset-10" />
-            <div className="hero-arch absolute inset-0 overflow-hidden rounded-[48%_48%_10%_10%] border-[14px] border-[#f7f4ee] bg-[#d5a17c]">
-              <div className="absolute -right-10 top-10 h-72 w-72 rounded-full bg-[#e9ceb2] opacity-80 blur-2xl" />
-              <div className="plant-leaf absolute left-8 top-24 h-48 w-16 -rotate-[26deg] rounded-[100%_0] bg-[#59705b] opacity-90" />
-              <div className="plant-leaf absolute left-20 top-12 h-48 w-16 rotate-[18deg] rounded-[100%_0] bg-[#3e5b4a]" />
-              <div className="plant-leaf absolute bottom-24 right-10 h-52 w-20 rotate-[44deg] rounded-[100%_0] bg-[#59705b]" />
-              <div className="absolute bottom-0 left-1/2 h-1/2 w-full -translate-x-1/2 bg-[#c28462] opacity-45" />
-              <div className="absolute bottom-12 left-1/2 z-10 h-52 w-64 -translate-x-1/2 rounded-[48%_48%_40%_40%] bg-[#faf8f0] shadow-[0_28px_25px_rgba(67,41,29,0.22)]">
-                <div className="absolute -right-14 top-14 h-24 w-28 rounded-r-full border-[16px] border-l-0 border-[#faf8f0]" />
-                <div className="absolute left-1/2 top-4 h-7 w-40 -translate-x-1/2 rounded-[50%] bg-[#7e4634]" />
-                <div className="absolute left-1/2 top-5 h-4 w-28 -translate-x-1/2 rounded-[50%] bg-[#d19a5d]" />
-                <div className="absolute left-1/2 top-6 h-2 w-16 -translate-x-1/2 rounded-[50%] bg-[#f0d9a9]" />
-                <div className="absolute -bottom-4 left-1/2 h-5 w-72 -translate-x-1/2 rounded-full bg-[#e6ded1] shadow-lg" />
-              </div>
-              <div className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 text-xs font-bold uppercase tracking-[0.3em] text-[#9b624a]">slow brewed</div>
+            <div className="absolute inset-4 rounded-[38px] bg-[#dfb58f] shadow-[0_30px_60px_rgba(80,45,30,0.15)] lg:inset-10" />
+            <div className="relative h-full overflow-hidden rounded-[38px] border-[14px] border-[#f7f4ee] bg-[#f1e9dc] shadow-xl">
+              <img src="https://cdn.builder.io/api/v1/image/assets%2F29970f0fe18b41d1b98d8778438e942c%2Ff215085077b3434d867ee13331b8d7ae?format=webp&width=800&height=1200" alt="Japanese welcome cat illustration" className="h-full w-full object-cover" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#1d2924]/65 to-transparent px-7 pb-7 pt-20 text-white"><p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f7d8bd]">いらっしゃいませ</p><p className="mt-2 font-serif text-3xl">Welcome in.</p></div>
             </div>
             <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-[#1d2924] px-5 py-2 text-xs font-medium tracking-wide text-white shadow-lg">made with care</div>
           </div>
@@ -166,10 +155,10 @@ export default function Index() {
               </button>
             ))}
           </div>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {visibleMenuItems.map((item) => (
-              <article key={item.name} className="group grid overflow-hidden rounded-[28px] bg-[#eee8dc] transition-transform hover:-translate-y-1 lg:grid-cols-[0.9fr_1.1fr]">
-                <div className={`menu-art min-h-56 lg:min-h-full ${item.className}`}>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {visibleMenuItems.map((item, index) => (
+              <article key={item.name} className={`group overflow-hidden rounded-[28px] bg-[#eee8dc] transition-transform hover:-translate-y-1 ${index === 0 ? "sm:col-span-2 lg:col-span-2" : ""}`}>
+                <div className={`menu-art min-h-64 lg:min-h-[290px] ${item.className}`}>
                   <span className="absolute left-5 top-5 rounded-full bg-[#f7f4ee]/85 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#1d2924]">{item.tag}</span>
                   <img src={item.image} alt={item.name} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1d2924]/30 to-transparent" />
@@ -187,18 +176,26 @@ export default function Index() {
         </section>
 
         <section id="our-story" className="grid items-center gap-12 border-t border-[#1d2924]/15 py-16 lg:grid-cols-2 lg:gap-24 lg:py-24">
-          <div className="relative h-[410px] overflow-hidden rounded-[32px] bg-[#c6d0c1]">
-            <div className="absolute left-1/2 top-12 h-64 w-56 -translate-x-1/2 rounded-[45%_45%_8%_8%] bg-[#c17e55] shadow-[0_20px_30px_rgba(46,37,23,0.14)]" />
-            <div className="absolute left-1/2 top-20 z-10 h-48 w-64 -translate-x-1/2 rounded-[50%] border-[20px] border-[#f7f4ee] bg-[#87523d] shadow-xl"><div className="absolute left-1/2 top-2 h-4 w-36 -translate-x-1/2 rounded-full bg-[#d19a5d]" /></div>
-            <div className="absolute bottom-0 left-0 h-32 w-full bg-[#9aaf9d]" />
-            <span className="absolute bottom-7 left-8 font-serif text-3xl text-[#f7f4ee]">est. 2017</span>
-            <span className="absolute right-8 top-8 text-5xl text-[#f7f4ee]">✦</span>
+          <div className="relative h-[410px] overflow-hidden rounded-[32px] bg-[#c6d0c1] shadow-[0_25px_50px_rgba(55,44,35,0.12)]">
+            <img src="https://images.pexels.com/photos/19214628/pexels-photo-19214628.jpeg" alt="Simple café table and chairs beside a sunlit wall" className="h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1d2924]/65 via-transparent to-transparent" />
+            <div className="absolute bottom-7 left-8 text-white"><p className="font-serif text-3xl">Your usual corner.</p><p className="mt-1 text-sm text-white/75">Table 04 · window light</p></div>
+            <div className="absolute right-5 top-5 rounded-full bg-[#f7f4ee]/85 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1d2924]">sit a while</div>
           </div>
           <div>
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#bc6947]">Our story</p>
             <h2 className="max-w-lg font-serif text-5xl leading-[0.95] tracking-[-0.055em] sm:text-6xl">A warm corner of the neighborhood.</h2>
             <p className="mt-7 max-w-lg text-base leading-8 text-[#52605a]">Juniper &amp; Co. started with two friends, a tiny espresso machine, and a belief that the best days begin around a table. Today, we still roast in small batches, bake before sunrise, and know our regulars by name.</p>
             <a href="#visit-us" className="mt-8 inline-flex items-center gap-3 font-semibold text-[#1d2924]">More about us <ArrowRight size={17} /></a>
+          </div>
+        </section>
+
+        <section className="grid gap-8 border-t border-[#1d2924]/15 py-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:py-24">
+          <div><p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#bc6947]">The little details</p><h2 className="font-serif text-5xl leading-[0.95] tracking-[-0.05em] sm:text-6xl">A place made for lingering.</h2><p className="mt-6 max-w-sm leading-7 text-[#68736d]">Warm wood, chalky walls, afternoon light, and a table that always has room for one more.</p></div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div className="cafe-detail cafe-table"><span className="absolute bottom-5 left-5 font-serif text-2xl text-white">The table</span><span className="absolute right-4 top-4 rounded-full bg-white/75 px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-[#1d2924]">oak + linen</span></div>
+            <div className="cafe-detail cafe-wall"><div className="wall-frame" /><span className="absolute bottom-5 left-5 font-serif text-2xl text-[#1d2924]">The wall</span><span className="absolute right-4 top-4 text-3xl text-[#bc6947]">✦</span></div>
+            <div className="cafe-detail cafe-corner"><span className="absolute bottom-5 left-5 font-serif text-2xl text-white">The corner</span><span className="absolute right-4 top-4 rounded-full bg-[#f7f4ee]/85 px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-[#1d2924]">window seat</span></div>
           </div>
         </section>
 

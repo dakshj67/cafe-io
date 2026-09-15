@@ -13,19 +13,25 @@ import {
 
 const menuCategories = ["All", "Coffee", "Drinks", "Breads", "Cakes", "Savory"];
 
+const foodImages = {
+  coffee: "https://images.pexels.com/photos/12540692/pexels-photo-12540692.png",
+  pastry: "https://images.pexels.com/photos/13439698/pexels-photo-13439698.jpeg",
+  savory: "https://images.pexels.com/photos/4161714/pexels-photo-4161714.jpeg",
+};
+
 const menuItems = [
-  { name: "Cloud Nine Latte", description: "Espresso, brown sugar, vanilla cloud", price: "$6.50", tag: "Signature", category: "Coffee", className: "drink-latte", art: "cup", symbol: "☕" },
-  { name: "Café au Lait", description: "French press coffee, silky steamed milk", price: "$5.00", tag: "France", category: "Coffee", className: "coffee-french", art: "plate", symbol: "☕" },
-  { name: "Cortado de Miel", description: "Spanish espresso, warm honey, orange zest", price: "$5.50", tag: "Spain", category: "Coffee", className: "coffee-spanish", art: "plate", symbol: "◌" },
-  { name: "Elderflower Spritz", description: "Elderflower, lemon, sparkling water, mint", price: "$6.00", tag: "Refreshing", category: "Drinks", className: "drink-spritz", art: "plate", symbol: "✦" },
-  { name: "Rosemary Focaccia", description: "Whipped ricotta, herbs, wild honey", price: "$8.00", tag: "Italy", category: "Breads", className: "food-focaccia", art: "focaccia", symbol: "✦" },
-  { name: "Pain au Chocolat", description: "French butter pastry, dark chocolate batons", price: "$7.00", tag: "France", category: "Breads", className: "bread-pastry", art: "plate", symbol: "⌁" },
-  { name: "Basque Cheesecake", description: "Caramelized top, berry compote", price: "$9.50", tag: "Spain", category: "Cakes", className: "food-cake", art: "cake", symbol: "◆" },
-  { name: "Victoria Sponge", description: "Strawberry jam, vanilla cream, soft sponge", price: "$8.50", tag: "Britain", category: "Cakes", className: "cake-sponge", art: "plate", symbol: "✿" },
-  { name: "Tiramisu Cloud", description: "Mascarpone, espresso, cocoa, ladyfingers", price: "$9.00", tag: "Italy", category: "Cakes", className: "cake-tiramisu", art: "plate", symbol: "◇" },
-  { name: "Croque Monsieur", description: "Gruyère, smoked ham, béchamel, sourdough", price: "$13.00", tag: "France", category: "Savory", className: "savory-croque", art: "plate", symbol: "▰" },
-  { name: "Patatas Bravas", description: "Crisp potatoes, smoked paprika aioli", price: "$10.00", tag: "Spain", category: "Savory", className: "savory-potatoes", art: "plate", symbol: "●" },
-  { name: "Mushroom Tagliatelle", description: "Wild mushrooms, parmesan, sage butter", price: "$16.00", tag: "Italy", category: "Savory", className: "savory-pasta", art: "plate", symbol: "⌁" },
+  { name: "Cloud Nine Latte", description: "Espresso, brown sugar, vanilla cloud", price: "₹540", tag: "Signature", category: "Coffee", className: "drink-latte", art: "cup", symbol: "☕", image: foodImages.coffee },
+  { name: "Café au Lait", description: "French press coffee, silky steamed milk", price: "₹420", tag: "France", category: "Coffee", className: "coffee-french", art: "plate", symbol: "☕", image: foodImages.coffee },
+  { name: "Cortado de Miel", description: "Spanish espresso, warm honey, orange zest", price: "₹460", tag: "Spain", category: "Coffee", className: "coffee-spanish", art: "plate", symbol: "◌", image: foodImages.coffee },
+  { name: "Elderflower Spritz", description: "Elderflower, lemon, sparkling water, mint", price: "₹500", tag: "Refreshing", category: "Drinks", className: "drink-spritz", art: "plate", symbol: "✦", image: foodImages.coffee },
+  { name: "Rosemary Focaccia", description: "Whipped ricotta, herbs, wild honey", price: "₹680", tag: "Italy", category: "Breads", className: "food-focaccia", art: "focaccia", symbol: "✦", image: foodImages.pastry },
+  { name: "Pain au Chocolat", description: "French butter pastry, dark chocolate batons", price: "₹590", tag: "France", category: "Breads", className: "bread-pastry", art: "plate", symbol: "⌁", image: foodImages.pastry },
+  { name: "Basque Cheesecake", description: "Caramelized top, berry compote", price: "₹800", tag: "Spain", category: "Cakes", className: "food-cake", art: "cake", symbol: "◆", image: foodImages.pastry },
+  { name: "Victoria Sponge", description: "Strawberry jam, vanilla cream, soft sponge", price: "₹720", tag: "Britain", category: "Cakes", className: "cake-sponge", art: "plate", symbol: "✿", image: foodImages.pastry },
+  { name: "Tiramisu Cloud", description: "Mascarpone, espresso, cocoa, ladyfingers", price: "₹760", tag: "Italy", category: "Cakes", className: "cake-tiramisu", art: "plate", symbol: "◇", image: foodImages.pastry },
+  { name: "Croque Monsieur", description: "Gruyère, smoked ham, béchamel, sourdough", price: "₹1,100", tag: "France", category: "Savory", className: "savory-croque", art: "plate", symbol: "▰", image: foodImages.savory },
+  { name: "Patatas Bravas", description: "Crisp potatoes, smoked paprika aioli", price: "₹850", tag: "Spain", category: "Savory", className: "savory-potatoes", art: "plate", symbol: "●", image: foodImages.savory },
+  { name: "Mushroom Tagliatelle", description: "Wild mushrooms, parmesan, sage butter", price: "₹1,350", tag: "Italy", category: "Savory", className: "savory-pasta", art: "plate", symbol: "⌁", image: foodImages.savory },
 ];
 
 const navItems = ["Menu", "Our story", "Visit us"];
@@ -101,7 +107,7 @@ export default function Index() {
             <div className="mt-12 flex items-center gap-6 border-t border-[#1d2924]/15 pt-5 text-sm text-[#52605a]">
               <span className="flex items-center gap-2"><Clock3 size={17} /> Mon–Sun, 7am–9pm</span>
               <span className="hidden h-1 w-1 rounded-full bg-[#bc6947] sm:block" />
-              <span className="hidden sm:inline">East Village, NYC</span>
+              <span className="hidden sm:inline">Bhimtal, India</span>
             </div>
           </div>
 
@@ -146,10 +152,8 @@ export default function Index() {
               <article key={item.name} className="group grid overflow-hidden rounded-[28px] bg-[#eee8dc] transition-transform hover:-translate-y-1 lg:grid-cols-[0.9fr_1.1fr]">
                 <div className={`menu-art min-h-56 lg:min-h-full ${item.className}`}>
                   <span className="absolute left-5 top-5 rounded-full bg-[#f7f4ee]/85 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#1d2924]">{item.tag}</span>
-                  {item.art === "cup" && <div className="cup-art"><div className="coffee-swirl" /></div>}
-                  {item.art === "focaccia" && <div className="focaccia-art"><span /><span /><span /></div>}
-                  {item.art === "cake" && <div className="cake-art"><div /><div /><div /></div>}
-                  {item.art === "plate" && <div className="plate-art"><span>{item.symbol}</span></div>}
+                  <img src={item.image} alt={item.name} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1d2924]/30 to-transparent" />
                 </div>
                 <div className="flex flex-col justify-center p-6 lg:p-7">
                   <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#bc6947]">{item.category}</p>
@@ -186,7 +190,7 @@ export default function Index() {
             <p className="mt-6 max-w-md leading-7 text-[#becac3]">Bring a friend, bring a book, or bring your appetite. We’ll keep the light on.</p>
             <button onClick={() => setReservationOpen(true)} className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#e9a681] px-6 py-3.5 text-sm font-bold text-[#1d2924] transition-all hover:-translate-y-1 hover:bg-white">Make a reservation <CalendarDays size={17} /></button>
           </div>
-          <div className="absolute bottom-8 right-10 hidden text-right text-sm text-[#becac3] md:block"><p className="mb-2 text-white">47 Orchard Street</p><p>New York, NY 10002</p><p className="mt-4">(212) 555–0147</p></div>
+          <div className="absolute bottom-8 right-10 hidden text-right text-sm text-[#becac3] md:block"><p className="mb-2 text-white">Bhimtal Lake Road</p><p>Nainital, Uttarakhand</p><p className="mt-4">+91 98765 43210</p></div>
         </section>
 
         <footer className="flex flex-col justify-between gap-5 border-t border-[#1d2924]/15 py-8 text-sm text-[#52605a] sm:flex-row sm:items-center">

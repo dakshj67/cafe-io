@@ -8,30 +8,40 @@ import {
   Plus,
   Search,
   Sparkles,
+  ShoppingBag,
   X,
 } from "lucide-react";
 
 const menuCategories = ["All", "Coffee", "Drinks", "Breads", "Cakes", "Savory"];
 
 const foodImages = {
-  coffee: "https://images.pexels.com/photos/12540692/pexels-photo-12540692.png",
-  pastry: "https://images.pexels.com/photos/13439698/pexels-photo-13439698.jpeg",
-  savory: "https://images.pexels.com/photos/4161714/pexels-photo-4161714.jpeg",
+  latte: "https://images.pexels.com/photos/28496565/pexels-photo-28496565.jpeg",
+  cafeAuLait: "https://images.pexels.com/photos/2638020/pexels-photo-2638020.jpeg",
+  cortado: "https://images.pexels.com/photos/14704662/pexels-photo-14704662.jpeg",
+  spritz: "https://images.pexels.com/photos/12086895/pexels-photo-12086895.jpeg",
+  focaccia: "https://images.pexels.com/photos/14122639/pexels-photo-14122639.jpeg",
+  pain: "https://images.pexels.com/photos/7333002/pexels-photo-7333002.jpeg",
+  basque: "https://images.pexels.com/photos/24206900/pexels-photo-24206900.jpeg",
+  victoria: "https://images.pexels.com/photos/10148398/pexels-photo-10148398.jpeg",
+  tiramisu: "https://images.pexels.com/photos/17558644/pexels-photo-17558644.jpeg",
+  croque: "https://images.pexels.com/photos/6416558/pexels-photo-6416558.jpeg",
+  patatas: "https://images.pexels.com/photos/15801065/pexels-photo-15801065.jpeg",
+  pasta: "https://images.pexels.com/photos/15820588/pexels-photo-15820588.jpeg",
 };
 
 const menuItems = [
-  { name: "Cloud Nine Latte", description: "Espresso, brown sugar, vanilla cloud", price: "₹540", tag: "Signature", category: "Coffee", className: "drink-latte", art: "cup", symbol: "☕", image: foodImages.coffee },
-  { name: "Café au Lait", description: "French press coffee, silky steamed milk", price: "₹420", tag: "France", category: "Coffee", className: "coffee-french", art: "plate", symbol: "☕", image: foodImages.coffee },
-  { name: "Cortado de Miel", description: "Spanish espresso, warm honey, orange zest", price: "₹460", tag: "Spain", category: "Coffee", className: "coffee-spanish", art: "plate", symbol: "◌", image: foodImages.coffee },
-  { name: "Elderflower Spritz", description: "Elderflower, lemon, sparkling water, mint", price: "₹500", tag: "Refreshing", category: "Drinks", className: "drink-spritz", art: "plate", symbol: "✦", image: foodImages.coffee },
-  { name: "Rosemary Focaccia", description: "Whipped ricotta, herbs, wild honey", price: "₹680", tag: "Italy", category: "Breads", className: "food-focaccia", art: "focaccia", symbol: "✦", image: foodImages.pastry },
-  { name: "Pain au Chocolat", description: "French butter pastry, dark chocolate batons", price: "₹590", tag: "France", category: "Breads", className: "bread-pastry", art: "plate", symbol: "⌁", image: foodImages.pastry },
-  { name: "Basque Cheesecake", description: "Caramelized top, berry compote", price: "₹800", tag: "Spain", category: "Cakes", className: "food-cake", art: "cake", symbol: "◆", image: foodImages.pastry },
-  { name: "Victoria Sponge", description: "Strawberry jam, vanilla cream, soft sponge", price: "₹720", tag: "Britain", category: "Cakes", className: "cake-sponge", art: "plate", symbol: "✿", image: foodImages.pastry },
-  { name: "Tiramisu Cloud", description: "Mascarpone, espresso, cocoa, ladyfingers", price: "₹760", tag: "Italy", category: "Cakes", className: "cake-tiramisu", art: "plate", symbol: "◇", image: foodImages.pastry },
-  { name: "Croque Monsieur", description: "Gruyère, smoked ham, béchamel, sourdough", price: "₹1,100", tag: "France", category: "Savory", className: "savory-croque", art: "plate", symbol: "▰", image: foodImages.savory },
-  { name: "Patatas Bravas", description: "Crisp potatoes, smoked paprika aioli", price: "₹850", tag: "Spain", category: "Savory", className: "savory-potatoes", art: "plate", symbol: "●", image: foodImages.savory },
-  { name: "Mushroom Tagliatelle", description: "Wild mushrooms, parmesan, sage butter", price: "₹1,350", tag: "Italy", category: "Savory", className: "savory-pasta", art: "plate", symbol: "⌁", image: foodImages.savory },
+  { name: "Cloud Nine Latte", description: "Espresso, brown sugar, vanilla cloud", price: "₹540", tag: "Signature", category: "Coffee", className: "drink-latte", art: "cup", symbol: "☕", image: foodImages.latte },
+  { name: "Café au Lait", description: "French press coffee, silky steamed milk", price: "₹420", tag: "France", category: "Coffee", className: "coffee-french", art: "plate", symbol: "☕", image: foodImages.cafeAuLait },
+  { name: "Cortado de Miel", description: "Spanish espresso, warm honey, orange zest", price: "₹460", tag: "Spain", category: "Coffee", className: "coffee-spanish", art: "plate", symbol: "◌", image: foodImages.cortado },
+  { name: "Elderflower Spritz", description: "Elderflower, lemon, sparkling water, mint", price: "₹500", tag: "Refreshing", category: "Drinks", className: "drink-spritz", art: "plate", symbol: "✦", image: foodImages.spritz },
+  { name: "Rosemary Focaccia", description: "Whipped ricotta, herbs, wild honey", price: "₹680", tag: "Italy", category: "Breads", className: "food-focaccia", art: "focaccia", symbol: "✦", image: foodImages.focaccia },
+  { name: "Pain au Chocolat", description: "French butter pastry, dark chocolate batons", price: "₹590", tag: "France", category: "Breads", className: "bread-pastry", art: "plate", symbol: "⌁", image: foodImages.pain },
+  { name: "Basque Cheesecake", description: "Caramelized top, berry compote", price: "₹800", tag: "Spain", category: "Cakes", className: "food-cake", art: "cake", symbol: "◆", image: foodImages.basque },
+  { name: "Victoria Sponge", description: "Strawberry jam, vanilla cream, soft sponge", price: "₹720", tag: "Britain", category: "Cakes", className: "cake-sponge", art: "plate", symbol: "✿", image: foodImages.victoria },
+  { name: "Tiramisu Cloud", description: "Mascarpone, espresso, cocoa, ladyfingers", price: "₹760", tag: "Italy", category: "Cakes", className: "cake-tiramisu", art: "plate", symbol: "◇", image: foodImages.tiramisu },
+  { name: "Croque Monsieur", description: "Gruyère, smoked ham, béchamel, sourdough", price: "₹1,100", tag: "France", category: "Savory", className: "savory-croque", art: "plate", symbol: "▰", image: foodImages.croque },
+  { name: "Patatas Bravas", description: "Crisp potatoes, smoked paprika aioli", price: "₹850", tag: "Spain", category: "Savory", className: "savory-potatoes", art: "plate", symbol: "●", image: foodImages.patatas },
+  { name: "Mushroom Tagliatelle", description: "Wild mushrooms, parmesan, sage butter", price: "₹1,350", tag: "Italy", category: "Savory", className: "savory-pasta", art: "plate", symbol: "⌁", image: foodImages.pasta },
 ];
 
 const navItems = ["Menu", "Our story", "Visit us"];
@@ -39,9 +49,15 @@ const navItems = ["Menu", "Our story", "Visit us"];
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [reservationOpen, setReservationOpen] = useState(false);
+  const [reservationConfirmed, setReservationConfirmed] = useState(false);
+  const [orderConfirmed, setOrderConfirmed] = useState(false);
+  const [bookingName, setBookingName] = useState("");
   const [quantity, setQuantity] = useState(2);
   const [activeCategory, setActiveCategory] = useState("All");
+  const [orderOpen, setOrderOpen] = useState(false);
+  const [orderItems, setOrderItems] = useState<typeof menuItems>([]);
   const visibleMenuItems = activeCategory === "All" ? menuItems : menuItems.filter((item) => item.category === activeCategory);
+  const orderTotal = orderItems.reduce((total, item) => total + Number(item.price.replace(/[^0-9]/g, "")), 0);
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#f7f4ee] text-[#1d2924]">
@@ -65,6 +81,9 @@ export default function Index() {
           <div className="flex items-center gap-2 sm:gap-4">
             <button className="hidden rounded-full p-2 transition-colors hover:bg-[#e8e1d6] sm:block" aria-label="Search">
               <Search size={18} strokeWidth={1.8} />
+            </button>
+            <button onClick={() => setOrderOpen(true)} className="relative hidden items-center gap-2 rounded-full border border-[#1d2924]/20 px-4 py-2.5 text-sm font-semibold transition-colors hover:bg-[#e8e1d6] sm:flex" aria-label="View order">
+              <ShoppingBag size={16} /> Order{orderItems.length > 0 && <span className="grid h-5 min-w-5 place-items-center rounded-full bg-[#bc6947] px-1 text-[10px] text-white">{orderItems.length}</span>}
             </button>
             <button onClick={() => setReservationOpen(true)} className="rounded-full bg-[#bc6947] px-4 py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#a75536] sm:px-5">
               Reserve a table
@@ -159,6 +178,7 @@ export default function Index() {
                   <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#bc6947]">{item.category}</p>
                   <div className="flex items-start justify-between gap-3"><h3 className="font-serif text-2xl leading-tight tracking-[-0.03em]">{item.name}</h3><span className="font-semibold text-[#bc6947]">{item.price}</span></div>
                   <p className="mt-3 text-sm leading-6 text-[#68736d]">{item.description}</p>
+                  <button onClick={() => { setOrderItems((current) => [...current, item]); setOrderOpen(true); }} className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-[#1d2924] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#bc6947]">Add to order <Plus size={14} /></button>
                 </div>
               </article>
             ))}
@@ -203,12 +223,33 @@ export default function Index() {
         <div className="fixed inset-0 z-50 grid place-items-center bg-[#1d2924]/60 p-5 backdrop-blur-sm" onClick={() => setReservationOpen(false)}>
           <div className="w-full max-w-md rounded-[28px] bg-[#f7f4ee] p-7 shadow-2xl" onClick={(event) => event.stopPropagation()}>
             <div className="mb-7 flex items-start justify-between"><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#bc6947]">A table for you</p><h2 className="mt-2 font-serif text-4xl tracking-[-0.05em]">Book your visit.</h2></div><button onClick={() => setReservationOpen(false)} className="rounded-full p-2 hover:bg-[#e8e1d6]" aria-label="Close reservation"><X size={20} /></button></div>
-            <div className="grid gap-4 sm:grid-cols-2"><label className="text-sm font-semibold">Date<input type="date" className="mt-2 w-full rounded-xl border border-[#1d2924]/15 bg-white px-3 py-3 font-normal" /></label><label className="text-sm font-semibold">Time<select className="mt-2 w-full rounded-xl border border-[#1d2924]/15 bg-white px-3 py-3 font-normal"><option>7:00 PM</option><option>7:30 PM</option><option>8:00 PM</option></select></label></div>
+            <label className="block text-sm font-semibold">Booking name<input value={bookingName} onChange={(event) => setBookingName(event.target.value)} placeholder="Your name" className="mt-2 w-full rounded-xl border border-[#1d2924]/15 bg-white px-3 py-3 font-normal outline-none ring-[#bc6947] focus:ring-2" /></label>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2"><label className="text-sm font-semibold">Date<input type="date" className="mt-2 w-full rounded-xl border border-[#1d2924]/15 bg-white px-3 py-3 font-normal" /></label><label className="text-sm font-semibold">Time<select className="mt-2 w-full rounded-xl border border-[#1d2924]/15 bg-white px-3 py-3 font-normal"><option>7:00 PM</option><option>7:30 PM</option><option>8:00 PM</option></select></label></div>
             <div className="mt-5 flex items-center justify-between rounded-xl border border-[#1d2924]/15 bg-white px-4 py-3"><span className="text-sm font-semibold">Guests</span><div className="flex items-center gap-3"><button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="grid h-8 w-8 place-items-center rounded-full bg-[#eee8dc]" aria-label="Decrease guests"><Minus size={14} /></button><span className="w-4 text-center">{quantity}</span><button onClick={() => setQuantity(quantity + 1)} className="grid h-8 w-8 place-items-center rounded-full bg-[#eee8dc]" aria-label="Increase guests"><Plus size={14} /></button></div></div>
-            <button onClick={() => setReservationOpen(false)} className="mt-6 w-full rounded-full bg-[#bc6947] py-3.5 font-bold text-white transition-colors hover:bg-[#a75536]">Find a table</button>
+            <button disabled={!bookingName.trim()} onClick={() => { setReservationOpen(false); setReservationConfirmed(true); }} className="mt-6 w-full rounded-full bg-[#bc6947] py-3.5 font-bold text-white transition-colors hover:bg-[#a75536] disabled:cursor-not-allowed disabled:opacity-40">Reserve my table</button>
             <p className="mt-4 text-center text-xs text-[#68736d]">Reservations are held for 15 minutes.</p>
           </div>
         </div>
+      )}
+
+      {orderOpen && (
+        <div className="fixed inset-0 z-50 flex justify-end bg-[#1d2924]/60 p-4 backdrop-blur-sm" onClick={() => setOrderOpen(false)}>
+          <div className="flex h-full w-full max-w-md flex-col rounded-[28px] bg-[#f7f4ee] p-7 shadow-2xl" onClick={(event) => event.stopPropagation()}>
+            <div className="flex items-start justify-between"><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#bc6947]">Juniper to go</p><h2 className="mt-2 font-serif text-4xl tracking-[-0.05em]">Your order.</h2></div><button onClick={() => setOrderOpen(false)} className="rounded-full p-2 hover:bg-[#e8e1d6]" aria-label="Close order"><X size={20} /></button></div>
+            <div className="mt-7 flex-1 space-y-3 overflow-y-auto">
+              {orderItems.length === 0 ? <p className="rounded-2xl bg-[#eee8dc] p-5 text-sm text-[#68736d]">Your order is waiting for something delicious.</p> : orderItems.map((item, index) => <div key={`${item.name}-${index}`} className="flex items-center justify-between rounded-2xl bg-white p-4"><div><p className="font-serif text-lg">{item.name}</p><p className="text-xs text-[#68736d]">{item.category}</p></div><span className="font-semibold text-[#bc6947]">{item.price}</span></div>)}
+            </div>
+            <div className="border-t border-[#1d2924]/15 pt-5"><div className="mb-4 flex items-center justify-between font-semibold"><span>Total</span><span className="text-[#bc6947]">₹{orderTotal.toLocaleString("en-IN")}</span></div><button disabled={orderItems.length === 0} onClick={() => { setOrderOpen(false); setOrderConfirmed(true); }} className="w-full rounded-full bg-[#1d2924] py-3.5 font-bold text-white transition-colors hover:bg-[#bc6947] disabled:cursor-not-allowed disabled:opacity-40">Place order</button></div>
+          </div>
+        </div>
+      )}
+
+      {reservationConfirmed && (
+        <div className="fixed bottom-6 left-1/2 z-[60] flex w-[calc(100%-2rem)] max-w-md -translate-x-1/2 items-center gap-4 rounded-2xl bg-[#1d2924] p-4 text-white shadow-2xl"><div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#9db79b] text-[#1d2924]">✓</div><div className="flex-1"><p className="font-semibold">Table reserved!</p><p className="text-sm text-[#becac3]">We’ll see you soon, {bookingName}.</p></div><button onClick={() => setReservationConfirmed(false)} className="text-[#becac3]" aria-label="Dismiss confirmation"><X size={18} /></button></div>
+      )}
+
+      {orderConfirmed && (
+        <div className="fixed bottom-6 left-1/2 z-[60] flex w-[calc(100%-2rem)] max-w-md -translate-x-1/2 items-center gap-4 rounded-2xl bg-[#1d2924] p-4 text-white shadow-2xl"><div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#e9a681] text-[#1d2924]">✓</div><div className="flex-1"><p className="font-semibold">Order received!</p><p className="text-sm text-[#becac3]">We’re getting your favorites ready.</p></div><button onClick={() => setOrderConfirmed(false)} className="text-[#becac3]" aria-label="Dismiss order confirmation"><X size={18} /></button></div>
       )}
     </main>
   );

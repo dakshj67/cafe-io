@@ -57,6 +57,17 @@
   .cake-art { @apply absolute bottom-9 left-1/2 h-32 w-48 -translate-x-1/2 skew-y-[-4deg] rounded-[8px_8px_18px_18px] bg-[#f0c687] shadow-[0_20px_20px_rgba(68,35,28,0.2)]; }
   .cake-art div { @apply absolute left-0 h-7 w-full border-b-4 border-[#6e3c2e]; }
   .cake-art div:nth-child(1) { top: 7px; background: #5e3129; } .cake-art div:nth-child(2) { top: 43px; background: #e5a662; } .cake-art div:nth-child(3) { top: 79px; background: #754331; }
+  .plate-art { @apply absolute bottom-10 left-1/2 grid h-36 w-48 -translate-x-1/2 place-items-center rounded-[50%] border-[14px] border-[#f7f4ee] bg-[#d49b62] shadow-[0_20px_20px_rgba(50,35,25,0.23)]; }
+  .plate-art span { @apply font-serif text-5xl text-[#fff1d8] drop-shadow-md; }
+  .coffee-french { background: linear-gradient(145deg, #cdb497, #a7866e 55%, #765b50); }
+  .coffee-spanish { background: linear-gradient(145deg, #e2b58f, #be7658 55%, #7c493d); }
+  .drink-spritz { background: radial-gradient(circle at 22% 22%, #f0d3a7 0 4%, transparent 5%), linear-gradient(145deg, #b6c9a6, #73947e 55%, #527267); }
+  .bread-pastry { background: linear-gradient(145deg, #e8d0a6, #c48e5f 55%, #95604a); }
+  .cake-sponge { background: linear-gradient(145deg, #e5bd8c, #c78363 55%, #9a5b4c); }
+  .cake-tiramisu { background: linear-gradient(145deg, #c9b09a, #9b7464 55%, #604942); }
+  .savory-croque { background: linear-gradient(145deg, #ded0a9, #b99a68 55%, #846d52); }
+  .savory-potatoes { background: linear-gradient(145deg, #d4bb85, #a7844b 55%, #6f5a3b); }
+  .savory-pasta { background: linear-gradient(145deg, #d7ad74, #b2764e 55%, #75493d); }
   .plant-leaf { transform-origin: bottom center; }
 }
 

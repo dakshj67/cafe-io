@@ -11,28 +11,21 @@ import {
   X,
 } from "lucide-react";
 
+const menuCategories = ["All", "Coffee", "Drinks", "Breads", "Cakes", "Savory"];
+
 const menuItems = [
-  {
-    name: "Cloud Nine Latte",
-    description: "Espresso, brown sugar, vanilla cloud",
-    price: "$6.50",
-    tag: "Signature",
-    className: "drink-latte",
-  },
-  {
-    name: "Rosemary Focaccia",
-    description: "Whipped ricotta, herbs, wild honey",
-    price: "$8.00",
-    tag: "Baked today",
-    className: "food-focaccia",
-  },
-  {
-    name: "Basque Cheesecake",
-    description: "Caramelized top, berry compote",
-    price: "$9.50",
-    tag: "A guest favorite",
-    className: "food-cake",
-  },
+  { name: "Cloud Nine Latte", description: "Espresso, brown sugar, vanilla cloud", price: "$6.50", tag: "Signature", category: "Coffee", className: "drink-latte", art: "cup", symbol: "☕" },
+  { name: "Café au Lait", description: "French press coffee, silky steamed milk", price: "$5.00", tag: "France", category: "Coffee", className: "coffee-french", art: "plate", symbol: "☕" },
+  { name: "Cortado de Miel", description: "Spanish espresso, warm honey, orange zest", price: "$5.50", tag: "Spain", category: "Coffee", className: "coffee-spanish", art: "plate", symbol: "◌" },
+  { name: "Elderflower Spritz", description: "Elderflower, lemon, sparkling water, mint", price: "$6.00", tag: "Refreshing", category: "Drinks", className: "drink-spritz", art: "plate", symbol: "✦" },
+  { name: "Rosemary Focaccia", description: "Whipped ricotta, herbs, wild honey", price: "$8.00", tag: "Italy", category: "Breads", className: "food-focaccia", art: "focaccia", symbol: "✦" },
+  { name: "Pain au Chocolat", description: "French butter pastry, dark chocolate batons", price: "$7.00", tag: "France", category: "Breads", className: "bread-pastry", art: "plate", symbol: "⌁" },
+  { name: "Basque Cheesecake", description: "Caramelized top, berry compote", price: "$9.50", tag: "Spain", category: "Cakes", className: "food-cake", art: "cake", symbol: "◆" },
+  { name: "Victoria Sponge", description: "Strawberry jam, vanilla cream, soft sponge", price: "$8.50", tag: "Britain", category: "Cakes", className: "cake-sponge", art: "plate", symbol: "✿" },
+  { name: "Tiramisu Cloud", description: "Mascarpone, espresso, cocoa, ladyfingers", price: "$9.00", tag: "Italy", category: "Cakes", className: "cake-tiramisu", art: "plate", symbol: "◇" },
+  { name: "Croque Monsieur", description: "Gruyère, smoked ham, béchamel, sourdough", price: "$13.00", tag: "France", category: "Savory", className: "savory-croque", art: "plate", symbol: "▰" },
+  { name: "Patatas Bravas", description: "Crisp potatoes, smoked paprika aioli", price: "$10.00", tag: "Spain", category: "Savory", className: "savory-potatoes", art: "plate", symbol: "●" },
+  { name: "Mushroom Tagliatelle", description: "Wild mushrooms, parmesan, sage butter", price: "$16.00", tag: "Italy", category: "Savory", className: "savory-pasta", art: "plate", symbol: "⌁" },
 ];
 
 const navItems = ["Menu", "Our story", "Visit us"];
@@ -41,6 +34,8 @@ export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [reservationOpen, setReservationOpen] = useState(false);
   const [quantity, setQuantity] = useState(2);
+  const [activeCategory, setActiveCategory] = useState("All");
+  const visibleMenuItems = activeCategory === "All" ? menuItems : menuItems.filter((item) => item.category === activeCategory);
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#f7f4ee] text-[#1d2924]">
@@ -131,30 +126,40 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="menu" className="border-t border-[#1d2924]/15 py-16 lg:py-24">
-          <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <div>
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#bc6947]">From our kitchen</p>
-              <h2 className="font-serif text-5xl tracking-[-0.05em] sm:text-6xl">The good stuff.</h2>
+        <section id="menu" className="border-t border-[#1d2924]/15 py-20 lg:py-32">
+          <div className="mb-10 max-w-3xl">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#bc6947]">From our kitchen</p>
+            <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+              <h2 className="font-serif text-5xl leading-[0.95] tracking-[-0.05em] sm:text-7xl">A little tour of<br /><span className="text-[#bc6947]">Europe, by plate.</span></h2>
+              <p className="max-w-xs text-sm leading-6 text-[#68736d]">French pastries, Italian comfort food, Spanish sunshine, and British tea-room classics — made our way.</p>
             </div>
-            <a href="#menu" className="group flex items-center gap-2 text-sm font-semibold">View full menu <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /></a>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {menuItems.map((item, index) => (
-              <article key={item.name} className="group overflow-hidden rounded-[28px] bg-[#eee8dc] transition-transform hover:-translate-y-2">
-                <div className={`menu-art ${item.className}`}>
+          <div className="mb-10 flex gap-2 overflow-x-auto border-y border-[#1d2924]/15 py-4 scrollbar-none">
+            {menuCategories.map((category) => (
+              <button key={category} onClick={() => setActiveCategory(category)} className={`shrink-0 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${activeCategory === category ? "bg-[#1d2924] text-white" : "bg-[#eee8dc] text-[#52605a] hover:bg-[#e4dccf]"}`}>
+                {category}
+              </button>
+            ))}
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {visibleMenuItems.map((item) => (
+              <article key={item.name} className="group grid overflow-hidden rounded-[28px] bg-[#eee8dc] transition-transform hover:-translate-y-1 lg:grid-cols-[0.9fr_1.1fr]">
+                <div className={`menu-art min-h-56 lg:min-h-full ${item.className}`}>
                   <span className="absolute left-5 top-5 rounded-full bg-[#f7f4ee]/85 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#1d2924]">{item.tag}</span>
-                  {index === 0 && <div className="cup-art"><div className="coffee-swirl" /></div>}
-                  {index === 1 && <div className="focaccia-art"><span /><span /><span /></div>}
-                  {index === 2 && <div className="cake-art"><div /><div /><div /></div>}
+                  {item.art === "cup" && <div className="cup-art"><div className="coffee-swirl" /></div>}
+                  {item.art === "focaccia" && <div className="focaccia-art"><span /><span /><span /></div>}
+                  {item.art === "cake" && <div className="cake-art"><div /><div /><div /></div>}
+                  {item.art === "plate" && <div className="plate-art"><span>{item.symbol}</span></div>}
                 </div>
-                <div className="p-6">
-                  <div className="flex items-start justify-between gap-3"><h3 className="font-serif text-2xl tracking-[-0.03em]">{item.name}</h3><span className="font-semibold text-[#bc6947]">{item.price}</span></div>
-                  <p className="mt-2 text-sm text-[#68736d]">{item.description}</p>
+                <div className="flex flex-col justify-center p-6 lg:p-7">
+                  <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#bc6947]">{item.category}</p>
+                  <div className="flex items-start justify-between gap-3"><h3 className="font-serif text-2xl leading-tight tracking-[-0.03em]">{item.name}</h3><span className="font-semibold text-[#bc6947]">{item.price}</span></div>
+                  <p className="mt-3 text-sm leading-6 text-[#68736d]">{item.description}</p>
                 </div>
               </article>
             ))}
           </div>
+          <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-[28px] border border-[#1d2924]/15 bg-[#f2e4d6] px-7 py-6 text-center sm:flex-row sm:text-left"><p className="font-serif text-2xl tracking-[-0.03em]">The menu changes with the market.</p><a href="#visit-us" className="group flex items-center gap-2 text-sm font-semibold">Ask about tonight's specials <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /></a></div>
         </section>
 
         <section id="our-story" className="grid items-center gap-12 border-t border-[#1d2924]/15 py-16 lg:grid-cols-2 lg:gap-24 lg:py-24">
